@@ -66,7 +66,7 @@ export function Header(){
 
         <Flex
         align="center">
-          <Box>
+          <Box mr="4">
             <Text>Iago Abner</Text>
             <Text color="gray.300" fontSize="small">
               iagoabner.dev@gmail.com
