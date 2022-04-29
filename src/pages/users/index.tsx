@@ -1,7 +1,7 @@
-import { Heading } from "@chakra-ui/core";
-import { Box, Button, Checkbox, Flex, Icon, Table, Tbody, Td, Text, Th, Thead, Tr } from "@chakra-ui/react";
-import { RiAddLine } from "react-icons/ri";
+import { Box, Button, Checkbox, Heading, Flex, Icon, Table, Tbody, Td, Text, Th, Thead, Tr } from "@chakra-ui/react";
+import { RiAddLine, RiPencilLine } from "react-icons/ri";
 import { Header } from "../../components/Header";
+import { Pagination } from "../../components/Pagination";
 import { Sidebar } from "../../components/Sidebar";
 
 export default function UserList(){
@@ -12,12 +12,14 @@ export default function UserList(){
         <Sidebar/>
 
         <Box flex="1" borderRadius={8} bg="gray.800" p="8">
+
           <Flex mb="8" justify="space-between" alignItems="center">
             <Heading size="lg" fontWeight="normal">Usuários</Heading>
-            <Button as="a" size="sm" fontSize="sm" colorScheme="pink" leftIcon={<Icon as={RiAddLine}/>}>Criar novo</Button>
+            <Button as="a" size="sm" fontSize="sm" colorScheme="pink" leftIcon={<Icon as={RiAddLine} fontSize="20"/>}>Criar novo</Button>
           </Flex>
+
           <Table colorScheme="whiteAlpha">
-            <Thead>
+            <Thead borderBottom="1px" borderBottomColor="gray.700">
               <Tr>
                 <Th px="6" color="gray.300" width="8">
                   <Checkbox colorScheme="pink" />
@@ -33,13 +35,21 @@ export default function UserList(){
                 </Td>
                 <Td>
                   <Box>
-                    <Text fontWeight="bold">iago</Text>
-                    <Text fontSize="sm" color="gray.300">iago@gmail.com</Text>
+                    <Text fontWeight="bold">iago abner</Text>
+                    <Text fontSize="sm" color="gray.300">iagoabner@gmail.com</Text>
                   </Box>
+                </Td>
+                <Td>04 de abril, 2021</Td>
+                <Td>
+                  <Button as="a" size="sm" fontSize="sm" colorScheme="pink" leftIcon={<Icon as={RiPencilLine} fontSize="16"/>}>
+                    Editar
+                  </Button>
                 </Td>
               </Tr>
             </Tbody>
           </Table>
+          
+        <Pagination/>
         </Box>
       </Flex>
     </Box>
